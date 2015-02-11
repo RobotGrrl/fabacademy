@@ -1,0 +1,14 @@
+import fab.types
+import fab.shapes
+
+title('On / Off')
+input('a', fab.types.Shape)
+input('empty', fab.types.Shape)
+input('on_off', int)
+
+if on_off%2 == 0:
+	title('On')
+	output('shape', a)
+else:
+	title('Off')
+	output('shape', empty)
