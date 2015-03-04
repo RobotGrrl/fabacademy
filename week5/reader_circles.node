@@ -1,0 +1,61 @@
+# Reads points from given file in format <x>,<y>\n
+# Makes them into circles with radius r
+# Use highlight to show the various points and centroid
+# by Erin RobotGrrl, March 3 2015
+
+import fab
+
+title('Reader - Circles')
+input('file', str)
+input('highlight', int)
+input('r', float)
+input('z0', float)
+input('z1', float)
+
+f = open(file, 'r')
+
+num = 0
+points = []
+centroid = [0, 0]
+
+for line in f:
+  l = line.rstrip('\n')
+  p = l.split(',')
+  x = int(p[0])
+  y = int(p[1])
+  centroid[0] += x
+  centroid[1] += y
+  points.append([x,y])
+  #print('(%d, %d)' % (x, y))
+
+num = len(points)
+#print('%d points' % num)
+
+centroid[0] /= num
+centroid[1] /= num
+#print('centroid: (%d, %d)' % (centroid[0], centroid[1]))
+
+# circle center by Neil Gershenfeld 1/24/15
+def circle_center(x0,y0,r):
+    from fab.types import Shape, Transform
+    # sqrt((X-x0)^2+(Y-y0)^2)-r
+    return Shape(
+        '-r+q-Xf%(x0)gq-Yf%(y0)gf%(r)g' % locals(),
+        x0-r,y0-r,x0+r,y0+r)
+
+all_shapes = circle_center(points[0][0], points[0][1], r)
+
+for i in range(1, num):
+  s = circle_center(points[i][0], points[i][1], r)
+  all_shapes |= s
+
+if(z0 == 0 and z1 <= 0):
+  output('shape', all_shapes)
+else:
+  output('shape', fab.shapes.extrude_z(all_shapes, z0, z1))
+
+if(highlight != 0):
+  fab.ui.point(centroid[0], centroid[1], 0, color=fab.color.orange)
+  meep = highlight%num
+  fab.ui.point(points[meep][0], points[meep][1], 0, color=(128,0,128))
+
