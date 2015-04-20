@@ -1,0 +1,263 @@
+{
+    "connections": [
+        [
+            [
+                1,
+                "val"
+            ],
+            [
+                0,
+                "val"
+            ]
+        ],
+        [
+            [
+                0,
+                "x"
+            ],
+            [
+                2,
+                "x"
+            ]
+        ],
+        [
+            [
+                0,
+                "z"
+            ],
+            [
+                2,
+                "z"
+            ]
+        ],
+        [
+            [
+                0,
+                "angle"
+            ],
+            [
+                2,
+                "a"
+            ]
+        ],
+        [
+            [
+                0,
+                "shape"
+            ],
+            [
+                2,
+                "input"
+            ]
+        ]
+    ],
+    "nodes": [
+        {
+            "datums": [
+                {
+                    "expr": "a0",
+                    "name": "__name",
+                    "type": "name"
+                },
+                {
+                    "expr": "0.0",
+                    "name": "val",
+                    "type": "float"
+                },
+                {
+                    "expr": "0.720003",
+                    "name": "r",
+                    "type": "float"
+                },
+                {
+                    "name": "angle",
+                    "type": "float output"
+                },
+                {
+                    "name": "x",
+                    "type": "float output"
+                },
+                {
+                    "name": "y",
+                    "type": "float output"
+                },
+                {
+                    "name": "z",
+                    "type": "float output"
+                },
+                {
+                    "name": "shape",
+                    "type": "shape output"
+                },
+                {
+                    "expr": [
+                        "import fab",
+                        "",
+                        "title('Cone')",
+                        "",
+                        "#input('x', float)",
+                        "#input('y', float)",
+                        "input('val', float)",
+                        "#input('z0', float)",
+                        "#input('z1', float)",
+                        "input('r', float)",
+                        "",
+                        "",
+                        "x = val # * 2",
+                        "y = -3 * pow(val-(1.5/2), 2) + 2",
+                        "z0 = pow(y, 1.1)",
+                        "z1 = z0 + 1",
+                        "",
+                        "output('angle', val*180)",
+                        "output('x', x)",
+                        "output('y', y)",
+                        "output('z', z0)",
+                        "",
+                        "output('shape', fab.shapes.cone(x, y, z0, z1, r))",
+                        "",
+                        "# UI",
+                        "fab.ui.wireframe([",
+                        "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                        "     math.sin(i/36. * 2*math.pi) * r + y, z0)",
+                        "    for i in range(36)], close=True)",
+                        "fab.ui.wireframe([(x,y,z0), (x+r,y,z0)])",
+                        "fab.ui.wireframe([(x,y,z0), (x,y,z1)])",
+                        "",
+                        "fab.ui.point(x, y, z0)",
+                        "fab.ui.point(x, y, z1)",
+                        "fab.ui.point(x + r, y, z0, drag=(r, None, None))",
+                        ""
+                    ],
+                    "name": "__script",
+                    "type": "script"
+                }
+            ],
+            "inspector": [
+                -183,
+                -61
+            ]
+        },
+        {
+            "datums": [
+                {
+                    "expr": "a1",
+                    "name": "__name",
+                    "type": "name"
+                },
+                {
+                    "expr": "28.66",
+                    "name": "mouse",
+                    "type": "float"
+                },
+                {
+                    "name": "val",
+                    "type": "float output"
+                },
+                {
+                    "expr": [
+                        "from fab import shapes",
+                        "",
+                        "title('control')",
+                        "",
+                        "input('mouse', float)",
+                        "",
+                        "a = abs(mouse)",
+                        "",
+                        "a %= 1.5",
+                        "",
+                        "output('val', a)"
+                    ],
+                    "name": "__script",
+                    "type": "script"
+                }
+            ],
+            "inspector": [
+                -192,
+                -194
+            ]
+        },
+        {
+            "datums": [
+                {
+                    "expr": "a2",
+                    "name": "__name",
+                    "type": "name"
+                },
+                {
+                    "expr": "0.0",
+                    "name": "x",
+                    "type": "float"
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_y",
+                    "type": "float"
+                },
+                {
+                    "expr": "0.0",
+                    "name": "z",
+                    "type": "float"
+                },
+                {
+                    "expr": "45",
+                    "name": "a",
+                    "type": "float"
+                },
+                {
+                    "expr": "None",
+                    "name": "input",
+                    "type": "shape"
+                },
+                {
+                    "name": "shape",
+                    "type": "shape output"
+                },
+                {
+                    "expr": [
+                        "import fab",
+                        "",
+                        "title('Rotate Y')",
+                        "",
+                        "input('x', float)",
+                        "input('_y', float)",
+                        "input('z', float)",
+                        "input('a', float)",
+                        "",
+                        "input('input', fab.types.Shape)",
+                        "output('shape', fab.shapes.rotate_y(input, a, x, z))",
+                        "",
+                        "# UI",
+                        "rad = math.radians(a)",
+                        "fab.ui.wireframe([(x + math.cos(rad), _y, z + math.sin(rad)),",
+                        "                  (x, _y, z),",
+                        "                  (x + 1, _y, z)], color=fab.color.teal)",
+                        "",
+                        "# Draw a semi-circular arc showing the rotation",
+                        "if int(a) % 360 != 0:",
+                        "    fab.ui.wireframe([",
+                        "        (x + math.cos(math.radians(a_)) * 0.3, _y,",
+                        "         z + math.sin(math.radians(a_)) * 0.3)",
+                        "        for a_ in range(int(a) % 360)], color=fab.color.teal)",
+                        "",
+                        "fab.ui.point(x, _y, z, color=fab.color.teal)",
+                        "",
+                        "def drag_pt(this, x, y, z):",
+                        "    this.a = math.degrees(math.atan2(z - this.z, x - this.x))",
+                        "fab.ui.point(x + math.cos(rad), _y, z + math.sin(rad),",
+                        "             color=fab.color.teal, drag=drag_pt, relative=False)",
+                        "",
+                        ""
+                    ],
+                    "name": "__script",
+                    "type": "script"
+                }
+            ],
+            "inspector": [
+                -184,
+                210
+            ]
+        }
+    ],
+    "protocol": 5,
+    "type": "sb"
+}

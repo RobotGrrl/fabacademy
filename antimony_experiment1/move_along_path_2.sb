@@ -1,0 +1,647 @@
+{
+    "connections": [
+        [
+            [
+                1,
+                "val"
+            ],
+            [
+                0,
+                "val"
+            ]
+        ],
+        [
+            [
+                0,
+                "x"
+            ],
+            [
+                2,
+                "x"
+            ]
+        ],
+        [
+            [
+                0,
+                "z"
+            ],
+            [
+                2,
+                "z"
+            ]
+        ],
+        [
+            [
+                0,
+                "angle"
+            ],
+            [
+                2,
+                "a"
+            ]
+        ],
+        [
+            [
+                0,
+                "shape"
+            ],
+            [
+                2,
+                "input"
+            ]
+        ],
+        [
+            [
+                5,
+                "shape"
+            ],
+            [
+                3,
+                "input"
+            ]
+        ],
+        [
+            [
+                1,
+                "val"
+            ],
+            [
+                4,
+                "val"
+            ]
+        ],
+        [
+            [
+                2,
+                "shape"
+            ],
+            [
+                5,
+                "a"
+            ]
+        ],
+        [
+            [
+                4,
+                "shape"
+            ],
+            [
+                5,
+                "b"
+            ]
+        ],
+        [
+            [
+                7,
+                "shape"
+            ],
+            [
+                5,
+                "b"
+            ]
+        ],
+        [
+            [
+                1,
+                "val"
+            ],
+            [
+                6,
+                "val"
+            ]
+        ],
+        [
+            [
+                6,
+                "shape"
+            ],
+            [
+                7,
+                "input"
+            ]
+        ]
+    ],
+    "nodes": [
+        {
+            "datums": [
+                {
+                    "expr": "a0",
+                    "name": "__name",
+                    "type": "name"
+                },
+                {
+                    "expr": "0.0",
+                    "name": "val",
+                    "type": "float"
+                },
+                {
+                    "expr": "0.76",
+                    "name": "r",
+                    "type": "float"
+                },
+                {
+                    "name": "angle",
+                    "type": "float output"
+                },
+                {
+                    "name": "x",
+                    "type": "float output"
+                },
+                {
+                    "name": "y",
+                    "type": "float output"
+                },
+                {
+                    "name": "z",
+                    "type": "float output"
+                },
+                {
+                    "name": "shape",
+                    "type": "shape output"
+                },
+                {
+                    "expr": [
+                        "import fab",
+                        "",
+                        "title('Cone')",
+                        "",
+                        "#input('x', float)",
+                        "#input('y', float)",
+                        "input('val', float)",
+                        "#input('z0', float)",
+                        "#input('z1', float)",
+                        "input('r', float)",
+                        "",
+                        "",
+                        "x = val # * 2",
+                        "y = -3 * pow(val-(1.5/2), 2) + 2",
+                        "z0 = pow(y, 1.1)",
+                        "z1 = z0 + 2",
+                        "",
+                        "output('angle', val*180)",
+                        "output('x', x)",
+                        "output('y', y)",
+                        "output('z', z0)",
+                        "",
+                        "output('shape', fab.shapes.cone(x, y, z0, z1, r))",
+                        "",
+                        "# UI",
+                        "fab.ui.wireframe([",
+                        "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                        "     math.sin(i/36. * 2*math.pi) * r + y, z0)",
+                        "    for i in range(36)], close=True)",
+                        "fab.ui.wireframe([(x,y,z0), (x+r,y,z0)])",
+                        "fab.ui.wireframe([(x,y,z0), (x,y,z1)])",
+                        "",
+                        "fab.ui.point(x, y, z0)",
+                        "fab.ui.point(x, y, z1)",
+                        "fab.ui.point(x + r, y, z0, drag=(r, None, None))",
+                        ""
+                    ],
+                    "name": "__script",
+                    "type": "script"
+                }
+            ],
+            "inspector": [
+                -183,
+                -61
+            ]
+        },
+        {
+            "datums": [
+                {
+                    "expr": "a1",
+                    "name": "__name",
+                    "type": "name"
+                },
+                {
+                    "expr": "1.92",
+                    "name": "mouse",
+                    "type": "float"
+                },
+                {
+                    "name": "val",
+                    "type": "float output"
+                },
+                {
+                    "expr": [
+                        "from fab import shapes",
+                        "",
+                        "title('control')",
+                        "",
+                        "input('mouse', float)",
+                        "",
+                        "a = abs(mouse)",
+                        "",
+                        "a %= 1.5",
+                        "",
+                        "output('val', a)"
+                    ],
+                    "name": "__script",
+                    "type": "script"
+                }
+            ],
+            "inspector": [
+                -192,
+                -194
+            ]
+        },
+        {
+            "datums": [
+                {
+                    "expr": "a2",
+                    "name": "__name",
+                    "type": "name"
+                },
+                {
+                    "expr": "0.0",
+                    "name": "x",
+                    "type": "float"
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_y",
+                    "type": "float"
+                },
+                {
+                    "expr": "0.0",
+                    "name": "z",
+                    "type": "float"
+                },
+                {
+                    "expr": "45",
+                    "name": "a",
+                    "type": "float"
+                },
+                {
+                    "expr": "None",
+                    "name": "input",
+                    "type": "shape"
+                },
+                {
+                    "name": "shape",
+                    "type": "shape output"
+                },
+                {
+                    "expr": [
+                        "import fab",
+                        "",
+                        "title('Rotate Y')",
+                        "",
+                        "input('x', float)",
+                        "input('_y', float)",
+                        "input('z', float)",
+                        "input('a', float)",
+                        "",
+                        "input('input', fab.types.Shape)",
+                        "output('shape', fab.shapes.rotate_y(input, a, x, z))",
+                        "",
+                        "# UI",
+                        "rad = math.radians(a)",
+                        "fab.ui.wireframe([(x + math.cos(rad), _y, z + math.sin(rad)),",
+                        "                  (x, _y, z),",
+                        "                  (x + 1, _y, z)], color=fab.color.teal)",
+                        "",
+                        "# Draw a semi-circular arc showing the rotation",
+                        "if int(a) % 360 != 0:",
+                        "    fab.ui.wireframe([",
+                        "        (x + math.cos(math.radians(a_)) * 0.3, _y,",
+                        "         z + math.sin(math.radians(a_)) * 0.3)",
+                        "        for a_ in range(int(a) % 360)], color=fab.color.teal)",
+                        "",
+                        "fab.ui.point(x, _y, z, color=fab.color.teal)",
+                        "",
+                        "def drag_pt(this, x, y, z):",
+                        "    this.a = math.degrees(math.atan2(z - this.z, x - this.x))",
+                        "fab.ui.point(x + math.cos(rad), _y, z + math.sin(rad),",
+                        "             color=fab.color.teal, drag=drag_pt, relative=False)",
+                        "",
+                        ""
+                    ],
+                    "name": "__script",
+                    "type": "script"
+                }
+            ],
+            "inspector": [
+                -182.59529107114548,
+                201.57174642687286
+            ]
+        },
+        {
+            "datums": [
+                {
+                    "expr": "a3",
+                    "name": "__name",
+                    "type": "name"
+                },
+                {
+                    "expr": "0.0",
+                    "name": "x",
+                    "type": "float"
+                },
+                {
+                    "expr": "0.0",
+                    "name": "y",
+                    "type": "float"
+                },
+                {
+                    "expr": "5",
+                    "name": "n",
+                    "type": "int"
+                },
+                {
+                    "expr": "None",
+                    "name": "input",
+                    "type": "shape"
+                },
+                {
+                    "name": "shape",
+                    "type": "shape output"
+                },
+                {
+                    "expr": [
+                        "import fab",
+                        "",
+                        "title('Iterate (polar)')",
+                        "",
+                        "input('x', float)",
+                        "input('y', float)",
+                        "input('n', int)",
+                        "",
+                        "input('input', fab.types.Shape)",
+                        "output('shape', fab.shapes.iterate_polar(input, x, y, n))",
+                        "",
+                        "# UI",
+                        "fab.ui.wireframe([",
+                        "    (math.cos(i/36. * 2*math.pi) * 0.3 + x,",
+                        "     math.sin(i/36. * 2*math.pi) * 0.3 + y, 0)",
+                        "    for i in range(36)], close=True, color=fab.color.teal)",
+                        "",
+                        "fab.ui.point(x, y, 0, color=fab.color.teal)",
+                        ""
+                    ],
+                    "name": "__script",
+                    "type": "script"
+                }
+            ],
+            "inspector": [
+                24.492212541614364,
+                597.82628753765141
+            ]
+        },
+        {
+            "datums": [
+                {
+                    "expr": "a5",
+                    "name": "__name",
+                    "type": "name"
+                },
+                {
+                    "expr": "0.51",
+                    "name": "r",
+                    "type": "float"
+                },
+                {
+                    "expr": "0.0",
+                    "name": "val",
+                    "type": "float"
+                },
+                {
+                    "name": "shape",
+                    "type": "shape output"
+                },
+                {
+                    "expr": [
+                        "import fab",
+                        "",
+                        "title('Sphere')",
+                        "",
+                        "#input('x', float)",
+                        "#input('y', float)",
+                        "#input('z', float)",
+                        "input('r', float)",
+                        "input('val', float)",
+                        "",
+                        "x = val",
+                        "y = -3 * pow(val-(1.5/2), 2) + 2",
+                        "z = pow(y, 1.1)",
+                        "",
+                        "output('shape', fab.shapes.sphere(x, y, z, r))",
+                        "",
+                        "# UI",
+                        "fab.ui.wireframe([",
+                        "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                        "     math.sin(i/36. * 2*math.pi) * r + y, z)",
+                        "    for i in range(36)], close=True)",
+                        "fab.ui.wireframe([(x,y,z-r), (x,y,z+r)])",
+                        "",
+                        "fab.ui.point(x, y, z)",
+                        "fab.ui.point(x, y, z + r, drag=(None, None, r))",
+                        "fab.ui.point(x, y, z - r, drag=(None, None, r))",
+                        ""
+                    ],
+                    "name": "__script",
+                    "type": "script"
+                }
+            ],
+            "inspector": [
+                128.42380359690674,
+                -52.78364822532626
+            ]
+        },
+        {
+            "datums": [
+                {
+                    "expr": "a4",
+                    "name": "__name",
+                    "type": "name"
+                },
+                {
+                    "expr": "None",
+                    "name": "a",
+                    "type": "shape"
+                },
+                {
+                    "expr": "None",
+                    "name": "b",
+                    "type": "shape"
+                },
+                {
+                    "name": "shape",
+                    "type": "shape output"
+                },
+                {
+                    "expr": [
+                        "import fab.types",
+                        "",
+                        "title('Difference')",
+                        "input('a', fab.types.Shape)",
+                        "input('b', fab.types.Shape)",
+                        "",
+                        "output('shape', a & ~b)",
+                        ""
+                    ],
+                    "name": "__script",
+                    "type": "script"
+                }
+            ],
+            "inspector": [
+                40.73655893678108,
+                455.12569294886436
+            ]
+        },
+        {
+            "datums": [
+                {
+                    "expr": "a6",
+                    "name": "__name",
+                    "type": "name"
+                },
+                {
+                    "expr": "0.32",
+                    "name": "r",
+                    "type": "float"
+                },
+                {
+                    "expr": "0.0",
+                    "name": "val",
+                    "type": "float"
+                },
+                {
+                    "name": "shape",
+                    "type": "shape output"
+                },
+                {
+                    "expr": [
+                        "import fab",
+                        "",
+                        "title('Cylinder')",
+                        "",
+                        "#input('x', float)",
+                        "#input('y', float)",
+                        "#input('z0', float)",
+                        "#input('z1', float)",
+                        "input('r', float)",
+                        "",
+                        "input('val', float)",
+                        "",
+                        "x = val",
+                        "y = -3 * pow(val-(1.5/2), 2) + 2",
+                        "z0 = pow(y, 1.1) - 10",
+                        "z1 = z0 + 10",
+                        "",
+                        "output('shape', fab.shapes.cylinder(x, y, z0, z1, r))",
+                        "",
+                        "# UI",
+                        "fab.ui.wireframe([(x, y, z0), (x, y, z1)])",
+                        "fab.ui.wireframe([(x, y, z0), (x+r, y, z0)])",
+                        "",
+                        "fab.ui.wireframe([",
+                        "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                        "     math.sin(i/36. * 2*math.pi) * r + y, z0)",
+                        "    for i in range(36)], close=True)",
+                        "",
+                        "fab.ui.wireframe([",
+                        "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                        "     math.sin(i/36. * 2*math.pi) * r + y, z1)",
+                        "    for i in range(36)], close=True)",
+                        "",
+                        "fab.ui.point(x, y, z0)",
+                        "fab.ui.point(x, y, z1)",
+                        "fab.ui.point(x + r, y, z0, drag=(r, None, None))",
+                        ""
+                    ],
+                    "name": "__script",
+                    "type": "script"
+                }
+            ],
+            "inspector": [
+                441.07860366031912,
+                -58.997775011889814
+            ]
+        },
+        {
+            "datums": [
+                {
+                    "expr": "a7",
+                    "name": "__name",
+                    "type": "name"
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_x",
+                    "type": "float"
+                },
+                {
+                    "expr": "0",
+                    "name": "y",
+                    "type": "float"
+                },
+                {
+                    "expr": "0",
+                    "name": "z",
+                    "type": "float"
+                },
+                {
+                    "expr": "90",
+                    "name": "a",
+                    "type": "float"
+                },
+                {
+                    "expr": "None",
+                    "name": "input",
+                    "type": "shape"
+                },
+                {
+                    "name": "shape",
+                    "type": "shape output"
+                },
+                {
+                    "expr": [
+                        "import fab",
+                        "",
+                        "title('Rotate X')",
+                        "",
+                        "input('_x', float)",
+                        "input('y', float)",
+                        "input('z', float)",
+                        "input('a', float)",
+                        "",
+                        "input('input', fab.types.Shape)",
+                        "output('shape', fab.shapes.rotate_x(input, a, y, z))",
+                        "",
+                        "# UI",
+                        "rad = math.radians(a)",
+                        "fab.ui.wireframe([(_x, y + math.cos(rad), z + math.sin(rad)),",
+                        "                  (_x, y, z),",
+                        "                  (_x, y + 1, z)], color=fab.color.teal)",
+                        "",
+                        "# Draw a semi-circular arc showing the rotation",
+                        "if int(a) % 360 != 0:",
+                        "    fab.ui.wireframe([",
+                        "        (_x, y + math.cos(math.radians(a_)) * 0.3,",
+                        "             z + math.sin(math.radians(a_)) * 0.3)",
+                        "        for a_ in range(int(a) % 360)], color=fab.color.teal)",
+                        "",
+                        "fab.ui.point(_x, y, z, color=fab.color.teal)",
+                        "",
+                        "def drag_pt(this, x, y, z):",
+                        "    this.a = math.degrees(math.atan2(z - this.z, y - this.y))",
+                        "fab.ui.point(_x, y + math.cos(rad), z + math.sin(rad),",
+                        "             color=fab.color.teal, drag=drag_pt, relative=False)",
+                        "",
+                        ""
+                    ],
+                    "name": "__script",
+                    "type": "script"
+                }
+            ],
+            "inspector": [
+                433.03832778904791,
+                184.44225072496485
+            ]
+        }
+    ],
+    "protocol": 5,
+    "type": "sb"
+}
