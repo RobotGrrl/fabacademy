@@ -1,0 +1,1494 @@
+{
+    "connections": [
+        [
+            [
+                1, 
+                "width"
+            ], 
+            [
+                0, 
+                "xmax"
+            ]
+        ], 
+        [
+            [
+                1, 
+                "piece_length"
+            ], 
+            [
+                0, 
+                "ymax"
+            ]
+        ], 
+        [
+            [
+                2, 
+                "shape"
+            ], 
+            [
+                3, 
+                "input"
+            ]
+        ], 
+        [
+            [
+                5, 
+                "shape"
+            ], 
+            [
+                3, 
+                "input"
+            ]
+        ], 
+        [
+            [
+                6, 
+                "shape"
+            ], 
+            [
+                3, 
+                "input"
+            ]
+        ], 
+        [
+            [
+                7, 
+                "shape"
+            ], 
+            [
+                3, 
+                "input"
+            ]
+        ], 
+        [
+            [
+                8, 
+                "shape"
+            ], 
+            [
+                3, 
+                "input"
+            ]
+        ], 
+        [
+            [
+                11, 
+                "shape"
+            ], 
+            [
+                3, 
+                "input"
+            ]
+        ], 
+        [
+            [
+                12, 
+                "shape"
+            ], 
+            [
+                3, 
+                "input"
+            ]
+        ], 
+        [
+            [
+                0, 
+                "shape"
+            ], 
+            [
+                4, 
+                "a"
+            ]
+        ], 
+        [
+            [
+                13, 
+                "shape"
+            ], 
+            [
+                4, 
+                "a"
+            ]
+        ], 
+        [
+            [
+                14, 
+                "shape"
+            ], 
+            [
+                4, 
+                "a"
+            ]
+        ], 
+        [
+            [
+                15, 
+                "shape"
+            ], 
+            [
+                4, 
+                "a"
+            ]
+        ], 
+        [
+            [
+                2, 
+                "shape"
+            ], 
+            [
+                4, 
+                "b"
+            ]
+        ], 
+        [
+            [
+                3, 
+                "shape"
+            ], 
+            [
+                4, 
+                "b"
+            ]
+        ], 
+        [
+            [
+                5, 
+                "shape"
+            ], 
+            [
+                4, 
+                "b"
+            ]
+        ], 
+        [
+            [
+                6, 
+                "shape"
+            ], 
+            [
+                4, 
+                "b"
+            ]
+        ], 
+        [
+            [
+                7, 
+                "shape"
+            ], 
+            [
+                4, 
+                "b"
+            ]
+        ], 
+        [
+            [
+                8, 
+                "shape"
+            ], 
+            [
+                4, 
+                "b"
+            ]
+        ], 
+        [
+            [
+                9, 
+                "shape"
+            ], 
+            [
+                4, 
+                "b"
+            ]
+        ], 
+        [
+            [
+                10, 
+                "shape"
+            ], 
+            [
+                4, 
+                "b"
+            ]
+        ], 
+        [
+            [
+                11, 
+                "shape"
+            ], 
+            [
+                4, 
+                "b"
+            ]
+        ], 
+        [
+            [
+                12, 
+                "shape"
+            ], 
+            [
+                4, 
+                "b"
+            ]
+        ]
+    ], 
+    "type": "sb", 
+    "nodes": [
+        {
+            "inspector": [
+                -158.35314733694605, 
+                -174.3630334014268
+            ], 
+            "datums": [
+                {
+                    "expr": "base", 
+                    "type": "name", 
+                    "name": "__name"
+                }, 
+                {
+                    "expr": "0.0", 
+                    "type": "float", 
+                    "name": "xmin"
+                }, 
+                {
+                    "expr": "0.0", 
+                    "type": "float", 
+                    "name": "ymin"
+                }, 
+                {
+                    "expr": "0.0", 
+                    "type": "float", 
+                    "name": "zmin"
+                }, 
+                {
+                    "expr": "2.91", 
+                    "type": "float", 
+                    "name": "xmax"
+                }, 
+                {
+                    "expr": "3.78", 
+                    "type": "float", 
+                    "name": "ymax"
+                }, 
+                {
+                    "expr": "dim.layer_height*2", 
+                    "type": "float", 
+                    "name": "zmax"
+                }, 
+                {
+                    "type": "shape output", 
+                    "name": "shape"
+                }, 
+                {
+                    "expr": [
+                        "import fab", 
+                        "", 
+                        "title('Cube')", 
+                        "", 
+                        "input('xmin', float)", 
+                        "input('ymin', float)", 
+                        "input('zmin', float)", 
+                        "input('xmax', float)", 
+                        "input('ymax', float)", 
+                        "input('zmax', float)", 
+                        "", 
+                        "output('shape', fab.shapes.cube(xmin, xmax, ymin, ymax, zmin, zmax))", 
+                        "", 
+                        "# UI", 
+                        "fab.ui.wireframe([(xmin, ymin, zmin), (xmax, ymin, zmin),", 
+                        "                  (xmax, ymax, zmin), (xmin, ymax, zmin)], close=True)", 
+                        "fab.ui.wireframe([(xmin, ymin, zmax), (xmax, ymin, zmax),", 
+                        "                  (xmax, ymax, zmax), (xmin, ymax, zmax)], close=True)", 
+                        "fab.ui.wireframe([(xmin, ymin, zmin), (xmin, ymax, zmin),", 
+                        "                  (xmin, ymax, zmax), (xmin, ymin, zmax)], close=True)", 
+                        "fab.ui.wireframe([(xmax, ymin, zmin), (xmax, ymax, zmin),", 
+                        "                  (xmax, ymax, zmax), (xmax, ymin, zmax)], close=True)", 
+                        "fab.ui.point(xmin, ymin, zmin)", 
+                        "fab.ui.point(xmax, ymax, zmax)", 
+                        ""
+                    ], 
+                    "type": "script", 
+                    "name": "__script"
+                }
+            ]
+        }, 
+        {
+            "inspector": [
+                -552.9865616827494, 
+                -320.6616536770737
+            ], 
+            "datums": [
+                {
+                    "expr": "dim", 
+                    "type": "name", 
+                    "name": "__name"
+                }, 
+                {
+                    "expr": "40", 
+                    "type": "float", 
+                    "name": "width"
+                }, 
+                {
+                    "expr": "40", 
+                    "type": "float", 
+                    "name": "length"
+                }, 
+                {
+                    "expr": "0.3", 
+                    "type": "float", 
+                    "name": "layer_height"
+                }, 
+                {
+                    "expr": "4.5", 
+                    "type": "float", 
+                    "name": "screw"
+                }, 
+                {
+                    "expr": "2.0", 
+                    "type": "float", 
+                    "name": "fishing"
+                }, 
+                {
+                    "expr": "4", 
+                    "type": "int", 
+                    "name": "rib_l"
+                }, 
+                {
+                    "expr": "8", 
+                    "type": "int", 
+                    "name": "rib_m"
+                }, 
+                {
+                    "expr": "4", 
+                    "type": "int", 
+                    "name": "rib_r"
+                }, 
+                {
+                    "type": "float output", 
+                    "name": "rib_l_z"
+                }, 
+                {
+                    "type": "float output", 
+                    "name": "rib_m_z"
+                }, 
+                {
+                    "type": "float output", 
+                    "name": "rib_r_z"
+                }, 
+                {
+                    "type": "float output", 
+                    "name": "piece_length"
+                }, 
+                {
+                    "expr": [
+                        "from fab import shapes", 
+                        "", 
+                        "title('Dimensions')", 
+                        "input('width', float)", 
+                        "input('length', float)", 
+                        "input('layer_height', float)", 
+                        "input('screw', float)", 
+                        "input('fishing', float)", 
+                        "input('rib_l', int)", 
+                        "input('rib_m', int)", 
+                        "input('rib_r', int)", 
+                        "", 
+                        "output('rib_l_z', rib_l*layer_height)", 
+                        "output('rib_m_z', rib_m*layer_height)", 
+                        "output('rib_r_z', rib_r*layer_height)", 
+                        "output('piece_length', length+6.0+6.0)", 
+                        "", 
+                        ""
+                    ], 
+                    "type": "script", 
+                    "name": "__script"
+                }
+            ]
+        }, 
+        {
+            "inspector": [
+                -187.40806299035037, 
+                189.73997551628054
+            ], 
+            "datums": [
+                {
+                    "expr": "screw_l", 
+                    "type": "name", 
+                    "name": "__name"
+                }, 
+                {
+                    "expr": "base.xmin+3", 
+                    "type": "float", 
+                    "name": "x"
+                }, 
+                {
+                    "expr": "base.ymin+3", 
+                    "type": "float", 
+                    "name": "y"
+                }, 
+                {
+                    "expr": "0.0", 
+                    "type": "float", 
+                    "name": "z0"
+                }, 
+                {
+                    "expr": "10", 
+                    "type": "float", 
+                    "name": "z1"
+                }, 
+                {
+                    "expr": "dim.screw/2", 
+                    "type": "float", 
+                    "name": "r"
+                }, 
+                {
+                    "type": "shape output", 
+                    "name": "shape"
+                }, 
+                {
+                    "expr": [
+                        "import fab", 
+                        "", 
+                        "title('Cylinder')", 
+                        "", 
+                        "input('x', float)", 
+                        "input('y', float)", 
+                        "input('z0', float)", 
+                        "input('z1', float)", 
+                        "input('r', float)", 
+                        "", 
+                        "output('shape', fab.shapes.cylinder(x, y, z0, z1, r))", 
+                        "", 
+                        "# UI", 
+                        "fab.ui.wireframe([(x, y, z0), (x, y, z1)])", 
+                        "fab.ui.wireframe([(x, y, z0), (x+r, y, z0)])", 
+                        "", 
+                        "fab.ui.wireframe([", 
+                        "    (math.cos(i/36. * 2*math.pi) * r + x,", 
+                        "     math.sin(i/36. * 2*math.pi) * r + y, z0)", 
+                        "    for i in range(36)], close=True)", 
+                        "", 
+                        "fab.ui.wireframe([", 
+                        "    (math.cos(i/36. * 2*math.pi) * r + x,", 
+                        "     math.sin(i/36. * 2*math.pi) * r + y, z1)", 
+                        "    for i in range(36)], close=True)", 
+                        "", 
+                        "fab.ui.point(x, y, z0)", 
+                        "fab.ui.point(x, y, z1)", 
+                        "fab.ui.point(x + r, y, z0, drag=(r, None, None))", 
+                        ""
+                    ], 
+                    "type": "script", 
+                    "name": "__script"
+                }
+            ]
+        }, 
+        {
+            "inspector": [
+                983.1712228553706, 
+                662.8499066976085
+            ], 
+            "datums": [
+                {
+                    "expr": "a0", 
+                    "type": "name", 
+                    "name": "__name"
+                }, 
+                {
+                    "expr": "0.0", 
+                    "type": "float", 
+                    "name": "_x"
+                }, 
+                {
+                    "expr": "dim.piece_length/2", 
+                    "type": "float", 
+                    "name": "y"
+                }, 
+                {
+                    "expr": "0.0", 
+                    "type": "float", 
+                    "name": "_z"
+                }, 
+                {
+                    "expr": "None", 
+                    "type": "shape", 
+                    "name": "input"
+                }, 
+                {
+                    "type": "shape output", 
+                    "name": "shape"
+                }, 
+                {
+                    "expr": [
+                        "import fab", 
+                        "", 
+                        "title('Reflect Y')", 
+                        "", 
+                        "input('_x', float)", 
+                        "input('y', float)", 
+                        "input('_z', float)", 
+                        "", 
+                        "input('input', fab.types.Shape)", 
+                        "output('shape', fab.shapes.reflect_y(input, y))", 
+                        "", 
+                        "# UI", 
+                        "fab.ui.wireframe([", 
+                        "    (_x - 1, y, _z + 1),", 
+                        "    (_x + 1, y, _z + 1),", 
+                        "    (_x + 1, y, _z - 1),", 
+                        "    (_x - 1, y, _z - 1)], color=fab.color.teal, close=True)", 
+                        "", 
+                        "fab.ui.point(_x, y, _z, color=fab.color.teal)", 
+                        "", 
+                        ""
+                    ], 
+                    "type": "script", 
+                    "name": "__script"
+                }
+            ]
+        }, 
+        {
+            "inspector": [
+                971.6765685171479, 
+                854.7860561216595
+            ], 
+            "datums": [
+                {
+                    "expr": "a1", 
+                    "type": "name", 
+                    "name": "__name"
+                }, 
+                {
+                    "expr": "None", 
+                    "type": "shape", 
+                    "name": "a"
+                }, 
+                {
+                    "expr": "None", 
+                    "type": "shape", 
+                    "name": "b"
+                }, 
+                {
+                    "type": "shape output", 
+                    "name": "shape"
+                }, 
+                {
+                    "expr": [
+                        "import fab.types", 
+                        "", 
+                        "title('Difference')", 
+                        "input('a', fab.types.Shape)", 
+                        "input('b', fab.types.Shape)", 
+                        "", 
+                        "output('shape', a & ~b)", 
+                        ""
+                    ], 
+                    "type": "script", 
+                    "name": "__script"
+                }
+            ]
+        }, 
+        {
+            "inspector": [
+                94.3991041121833, 
+                192.94176729191395
+            ], 
+            "datums": [
+                {
+                    "expr": "screw_m", 
+                    "type": "name", 
+                    "name": "__name"
+                }, 
+                {
+                    "expr": "dim.width/2", 
+                    "type": "float", 
+                    "name": "x"
+                }, 
+                {
+                    "expr": "base.ymin+3", 
+                    "type": "float", 
+                    "name": "y"
+                }, 
+                {
+                    "expr": "0.0", 
+                    "type": "float", 
+                    "name": "z0"
+                }, 
+                {
+                    "expr": "10", 
+                    "type": "float", 
+                    "name": "z1"
+                }, 
+                {
+                    "expr": "dim.screw/2", 
+                    "type": "float", 
+                    "name": "r"
+                }, 
+                {
+                    "type": "shape output", 
+                    "name": "shape"
+                }, 
+                {
+                    "expr": [
+                        "import fab", 
+                        "", 
+                        "title('Cylinder')", 
+                        "", 
+                        "input('x', float)", 
+                        "input('y', float)", 
+                        "input('z0', float)", 
+                        "input('z1', float)", 
+                        "input('r', float)", 
+                        "", 
+                        "output('shape', fab.shapes.cylinder(x, y, z0, z1, r))", 
+                        "", 
+                        "# UI", 
+                        "fab.ui.wireframe([(x, y, z0), (x, y, z1)])", 
+                        "fab.ui.wireframe([(x, y, z0), (x+r, y, z0)])", 
+                        "", 
+                        "fab.ui.wireframe([", 
+                        "    (math.cos(i/36. * 2*math.pi) * r + x,", 
+                        "     math.sin(i/36. * 2*math.pi) * r + y, z0)", 
+                        "    for i in range(36)], close=True)", 
+                        "", 
+                        "fab.ui.wireframe([", 
+                        "    (math.cos(i/36. * 2*math.pi) * r + x,", 
+                        "     math.sin(i/36. * 2*math.pi) * r + y, z1)", 
+                        "    for i in range(36)], close=True)", 
+                        "", 
+                        "fab.ui.point(x, y, z0)", 
+                        "fab.ui.point(x, y, z1)", 
+                        "fab.ui.point(x + r, y, z0, drag=(r, None, None))", 
+                        ""
+                    ], 
+                    "type": "script", 
+                    "name": "__script"
+                }
+            ]
+        }, 
+        {
+            "inspector": [
+                384.39462467309977, 
+                194.7444549553641
+            ], 
+            "datums": [
+                {
+                    "expr": "screw_r", 
+                    "type": "name", 
+                    "name": "__name"
+                }, 
+                {
+                    "expr": "base.xmax-3", 
+                    "type": "float", 
+                    "name": "x"
+                }, 
+                {
+                    "expr": "base.ymin+3", 
+                    "type": "float", 
+                    "name": "y"
+                }, 
+                {
+                    "expr": "0.0", 
+                    "type": "float", 
+                    "name": "z0"
+                }, 
+                {
+                    "expr": "10", 
+                    "type": "float", 
+                    "name": "z1"
+                }, 
+                {
+                    "expr": "dim.screw/2", 
+                    "type": "float", 
+                    "name": "r"
+                }, 
+                {
+                    "type": "shape output", 
+                    "name": "shape"
+                }, 
+                {
+                    "expr": [
+                        "import fab", 
+                        "", 
+                        "title('Cylinder')", 
+                        "", 
+                        "input('x', float)", 
+                        "input('y', float)", 
+                        "input('z0', float)", 
+                        "input('z1', float)", 
+                        "input('r', float)", 
+                        "", 
+                        "output('shape', fab.shapes.cylinder(x, y, z0, z1, r))", 
+                        "", 
+                        "# UI", 
+                        "fab.ui.wireframe([(x, y, z0), (x, y, z1)])", 
+                        "fab.ui.wireframe([(x, y, z0), (x+r, y, z0)])", 
+                        "", 
+                        "fab.ui.wireframe([", 
+                        "    (math.cos(i/36. * 2*math.pi) * r + x,", 
+                        "     math.sin(i/36. * 2*math.pi) * r + y, z0)", 
+                        "    for i in range(36)], close=True)", 
+                        "", 
+                        "fab.ui.wireframe([", 
+                        "    (math.cos(i/36. * 2*math.pi) * r + x,", 
+                        "     math.sin(i/36. * 2*math.pi) * r + y, z1)", 
+                        "    for i in range(36)], close=True)", 
+                        "", 
+                        "fab.ui.point(x, y, z0)", 
+                        "fab.ui.point(x, y, z1)", 
+                        "fab.ui.point(x + r, y, z0, drag=(r, None, None))", 
+                        ""
+                    ], 
+                    "type": "script", 
+                    "name": "__script"
+                }
+            ]
+        }, 
+        {
+            "inspector": [
+                -197, 
+                548
+            ], 
+            "datums": [
+                {
+                    "expr": "fishing_l_end", 
+                    "type": "name", 
+                    "name": "__name"
+                }, 
+                {
+                    "expr": "dim.width/2-7", 
+                    "type": "float", 
+                    "name": "x"
+                }, 
+                {
+                    "expr": "base.ymin+2.655", 
+                    "type": "float", 
+                    "name": "y"
+                }, 
+                {
+                    "expr": "0.0", 
+                    "type": "float", 
+                    "name": "z0"
+                }, 
+                {
+                    "expr": "10", 
+                    "type": "float", 
+                    "name": "z1"
+                }, 
+                {
+                    "expr": "dim.fishing/2", 
+                    "type": "float", 
+                    "name": "r"
+                }, 
+                {
+                    "type": "shape output", 
+                    "name": "shape"
+                }, 
+                {
+                    "expr": [
+                        "import fab", 
+                        "", 
+                        "title('Cylinder')", 
+                        "", 
+                        "input('x', float)", 
+                        "input('y', float)", 
+                        "input('z0', float)", 
+                        "input('z1', float)", 
+                        "input('r', float)", 
+                        "", 
+                        "output('shape', fab.shapes.cylinder(x, y, z0, z1, r))", 
+                        "", 
+                        "# UI", 
+                        "fab.ui.wireframe([(x, y, z0), (x, y, z1)])", 
+                        "fab.ui.wireframe([(x, y, z0), (x+r, y, z0)])", 
+                        "", 
+                        "fab.ui.wireframe([", 
+                        "    (math.cos(i/36. * 2*math.pi) * r + x,", 
+                        "     math.sin(i/36. * 2*math.pi) * r + y, z0)", 
+                        "    for i in range(36)], close=True)", 
+                        "", 
+                        "fab.ui.wireframe([", 
+                        "    (math.cos(i/36. * 2*math.pi) * r + x,", 
+                        "     math.sin(i/36. * 2*math.pi) * r + y, z1)", 
+                        "    for i in range(36)], close=True)", 
+                        "", 
+                        "fab.ui.point(x, y, z0)", 
+                        "fab.ui.point(x, y, z1)", 
+                        "fab.ui.point(x + r, y, z0, drag=(r, None, None))", 
+                        ""
+                    ], 
+                    "type": "script", 
+                    "name": "__script"
+                }
+            ]
+        }, 
+        {
+            "inspector": [
+                125.72950257209084, 
+                546.086858550863
+            ], 
+            "datums": [
+                {
+                    "expr": "fishing_r_end", 
+                    "type": "name", 
+                    "name": "__name"
+                }, 
+                {
+                    "expr": "dim.width/2+7", 
+                    "type": "float", 
+                    "name": "x"
+                }, 
+                {
+                    "expr": "base.ymin+2.655", 
+                    "type": "float", 
+                    "name": "y"
+                }, 
+                {
+                    "expr": "0.0", 
+                    "type": "float", 
+                    "name": "z0"
+                }, 
+                {
+                    "expr": "10", 
+                    "type": "float", 
+                    "name": "z1"
+                }, 
+                {
+                    "expr": "dim.fishing/2", 
+                    "type": "float", 
+                    "name": "r"
+                }, 
+                {
+                    "type": "shape output", 
+                    "name": "shape"
+                }, 
+                {
+                    "expr": [
+                        "import fab", 
+                        "", 
+                        "title('Cylinder')", 
+                        "", 
+                        "input('x', float)", 
+                        "input('y', float)", 
+                        "input('z0', float)", 
+                        "input('z1', float)", 
+                        "input('r', float)", 
+                        "", 
+                        "output('shape', fab.shapes.cylinder(x, y, z0, z1, r))", 
+                        "", 
+                        "# UI", 
+                        "fab.ui.wireframe([(x, y, z0), (x, y, z1)])", 
+                        "fab.ui.wireframe([(x, y, z0), (x+r, y, z0)])", 
+                        "", 
+                        "fab.ui.wireframe([", 
+                        "    (math.cos(i/36. * 2*math.pi) * r + x,", 
+                        "     math.sin(i/36. * 2*math.pi) * r + y, z0)", 
+                        "    for i in range(36)], close=True)", 
+                        "", 
+                        "fab.ui.wireframe([", 
+                        "    (math.cos(i/36. * 2*math.pi) * r + x,", 
+                        "     math.sin(i/36. * 2*math.pi) * r + y, z1)", 
+                        "    for i in range(36)], close=True)", 
+                        "", 
+                        "fab.ui.point(x, y, z0)", 
+                        "fab.ui.point(x, y, z1)", 
+                        "fab.ui.point(x + r, y, z0, drag=(r, None, None))", 
+                        ""
+                    ], 
+                    "type": "script", 
+                    "name": "__script"
+                }
+            ]
+        }, 
+        {
+            "inspector": [
+                -197.32974418898374, 
+                801.7584993906901
+            ], 
+            "datums": [
+                {
+                    "expr": "fishing_l", 
+                    "type": "name", 
+                    "name": "__name"
+                }, 
+                {
+                    "expr": "dim.width/2-7", 
+                    "type": "float", 
+                    "name": "x"
+                }, 
+                {
+                    "expr": "dim.piece_length/2", 
+                    "type": "float", 
+                    "name": "y"
+                }, 
+                {
+                    "expr": "0.0", 
+                    "type": "float", 
+                    "name": "z0"
+                }, 
+                {
+                    "expr": "10", 
+                    "type": "float", 
+                    "name": "z1"
+                }, 
+                {
+                    "expr": "dim.fishing/2", 
+                    "type": "float", 
+                    "name": "r"
+                }, 
+                {
+                    "type": "shape output", 
+                    "name": "shape"
+                }, 
+                {
+                    "expr": [
+                        "import fab", 
+                        "", 
+                        "title('Cylinder')", 
+                        "", 
+                        "input('x', float)", 
+                        "input('y', float)", 
+                        "input('z0', float)", 
+                        "input('z1', float)", 
+                        "input('r', float)", 
+                        "", 
+                        "s = fab.shapes.cylinder(x, y, z0, z1, r)", 
+                        "", 
+                        "if dim.length >= 30:", 
+                        "", 
+                        "  sp = 4", 
+                        "", 
+                        "  rep = int((dim.length/10)-2)", 
+                        "  print(rep)", 
+                        "  ", 
+                        "  stop_line = base.ymin+8+dim.fishing/2+2 #2.655", 
+                        "  print(stop_line)", 
+                        "", 
+                        "  space = dim.length-2*stop_line", 
+                        "  ", 
+                        "  reps = space/sp #6.5", 
+                        "  print(reps)", 
+                        "  reps = int(reps/2)", 
+                        "", 
+                        "  for i in range(1, reps+1):", 
+                        "    s |= fab.shapes.cylinder(x, y+((sp+r)*i), z0, z1, r)", 
+                        "    s |= fab.shapes.cylinder(x, y-((sp+r)*i), z0, z1, r)", 
+                        "", 
+                        "output('shape', s)", 
+                        "", 
+                        "# UI", 
+                        "fab.ui.wireframe([(x, y, z0), (x, y, z1)])", 
+                        "fab.ui.wireframe([(x, y, z0), (x+r, y, z0)])", 
+                        "", 
+                        "fab.ui.wireframe([", 
+                        "    (math.cos(i/36. * 2*math.pi) * r + x,", 
+                        "     math.sin(i/36. * 2*math.pi) * r + y, z0)", 
+                        "    for i in range(36)], close=True)", 
+                        "", 
+                        "fab.ui.wireframe([", 
+                        "    (math.cos(i/36. * 2*math.pi) * r + x,", 
+                        "     math.sin(i/36. * 2*math.pi) * r + y, z1)", 
+                        "    for i in range(36)], close=True)", 
+                        "", 
+                        "fab.ui.point(x, y, z0)", 
+                        "fab.ui.point(x, y, z1)", 
+                        "fab.ui.point(x + r, y, z0, drag=(r, None, None))", 
+                        ""
+                    ], 
+                    "type": "script", 
+                    "name": "__script"
+                }
+            ]
+        }, 
+        {
+            "inspector": [
+                131.69661619568603, 
+                802.4966468902595
+            ], 
+            "datums": [
+                {
+                    "expr": "fishing_r", 
+                    "type": "name", 
+                    "name": "__name"
+                }, 
+                {
+                    "expr": "dim.width/2+7", 
+                    "type": "float", 
+                    "name": "x"
+                }, 
+                {
+                    "expr": "dim.piece_length/2", 
+                    "type": "float", 
+                    "name": "y"
+                }, 
+                {
+                    "expr": "0.0", 
+                    "type": "float", 
+                    "name": "z0"
+                }, 
+                {
+                    "expr": "10", 
+                    "type": "float", 
+                    "name": "z1"
+                }, 
+                {
+                    "expr": "dim.fishing/2", 
+                    "type": "float", 
+                    "name": "r"
+                }, 
+                {
+                    "type": "shape output", 
+                    "name": "shape"
+                }, 
+                {
+                    "expr": [
+                        "import fab", 
+                        "", 
+                        "title('Cylinder')", 
+                        "", 
+                        "input('x', float)", 
+                        "input('y', float)", 
+                        "input('z0', float)", 
+                        "input('z1', float)", 
+                        "input('r', float)", 
+                        "", 
+                        "s = fab.shapes.cylinder(x, y, z0, z1, r)", 
+                        "", 
+                        "if dim.length >= 30:", 
+                        "", 
+                        "  sp = 4", 
+                        "", 
+                        "  rep = int((dim.length/10)-2)", 
+                        "  print(rep)", 
+                        "  ", 
+                        "  stop_line = base.ymin+8+dim.fishing/2+2 #2.655", 
+                        "  print(stop_line)", 
+                        "", 
+                        "  space = dim.length-2*stop_line", 
+                        "  ", 
+                        "  reps = space/sp #6.5", 
+                        "  print(reps)", 
+                        "  reps = int(reps/2)", 
+                        "", 
+                        "  for i in range(1, reps+1):", 
+                        "    s |= fab.shapes.cylinder(x, y+((sp+r)*i), z0, z1, r)", 
+                        "    s |= fab.shapes.cylinder(x, y-((sp+r)*i), z0, z1, r)", 
+                        "", 
+                        "output('shape', s)", 
+                        "", 
+                        "# UI", 
+                        "fab.ui.wireframe([(x, y, z0), (x, y, z1)])", 
+                        "fab.ui.wireframe([(x, y, z0), (x+r, y, z0)])", 
+                        "", 
+                        "fab.ui.wireframe([", 
+                        "    (math.cos(i/36. * 2*math.pi) * r + x,", 
+                        "     math.sin(i/36. * 2*math.pi) * r + y, z0)", 
+                        "    for i in range(36)], close=True)", 
+                        "", 
+                        "fab.ui.wireframe([", 
+                        "    (math.cos(i/36. * 2*math.pi) * r + x,", 
+                        "     math.sin(i/36. * 2*math.pi) * r + y, z1)", 
+                        "    for i in range(36)], close=True)", 
+                        "", 
+                        "fab.ui.point(x, y, z0)", 
+                        "fab.ui.point(x, y, z1)", 
+                        "fab.ui.point(x + r, y, z0, drag=(r, None, None))", 
+                        ""
+                    ], 
+                    "type": "script", 
+                    "name": "__script"
+                }
+            ]
+        }, 
+        {
+            "inspector": [
+                -195.8886621823907, 
+                1051.332145559817
+            ], 
+            "datums": [
+                {
+                    "expr": "fishing_l_pivot", 
+                    "type": "name", 
+                    "name": "__name"
+                }, 
+                {
+                    "expr": "dim.width/2-7", 
+                    "type": "float", 
+                    "name": "x"
+                }, 
+                {
+                    "expr": "base.ymin+8", 
+                    "type": "float", 
+                    "name": "y"
+                }, 
+                {
+                    "expr": "0.0", 
+                    "type": "float", 
+                    "name": "z0"
+                }, 
+                {
+                    "expr": "10", 
+                    "type": "float", 
+                    "name": "z1"
+                }, 
+                {
+                    "expr": "dim.fishing/2", 
+                    "type": "float", 
+                    "name": "r"
+                }, 
+                {
+                    "type": "shape output", 
+                    "name": "shape"
+                }, 
+                {
+                    "expr": [
+                        "import fab", 
+                        "", 
+                        "title('Cylinder')", 
+                        "", 
+                        "input('x', float)", 
+                        "input('y', float)", 
+                        "input('z0', float)", 
+                        "input('z1', float)", 
+                        "input('r', float)", 
+                        "", 
+                        "output('shape', fab.shapes.cylinder(x, y, z0, z1, r))", 
+                        "", 
+                        "# UI", 
+                        "fab.ui.wireframe([(x, y, z0), (x, y, z1)])", 
+                        "fab.ui.wireframe([(x, y, z0), (x+r, y, z0)])", 
+                        "", 
+                        "fab.ui.wireframe([", 
+                        "    (math.cos(i/36. * 2*math.pi) * r + x,", 
+                        "     math.sin(i/36. * 2*math.pi) * r + y, z0)", 
+                        "    for i in range(36)], close=True)", 
+                        "", 
+                        "fab.ui.wireframe([", 
+                        "    (math.cos(i/36. * 2*math.pi) * r + x,", 
+                        "     math.sin(i/36. * 2*math.pi) * r + y, z1)", 
+                        "    for i in range(36)], close=True)", 
+                        "", 
+                        "fab.ui.point(x, y, z0)", 
+                        "fab.ui.point(x, y, z1)", 
+                        "fab.ui.point(x + r, y, z0, drag=(r, None, None))", 
+                        ""
+                    ], 
+                    "type": "script", 
+                    "name": "__script"
+                }
+            ]
+        }, 
+        {
+            "inspector": [
+                129.1141479438057, 
+                1051.1458857310422
+            ], 
+            "datums": [
+                {
+                    "expr": "fishing_r_pivot", 
+                    "type": "name", 
+                    "name": "__name"
+                }, 
+                {
+                    "expr": "dim.width/2+7", 
+                    "type": "float", 
+                    "name": "x"
+                }, 
+                {
+                    "expr": "base.ymin+8", 
+                    "type": "float", 
+                    "name": "y"
+                }, 
+                {
+                    "expr": "0.0", 
+                    "type": "float", 
+                    "name": "z0"
+                }, 
+                {
+                    "expr": "10", 
+                    "type": "float", 
+                    "name": "z1"
+                }, 
+                {
+                    "expr": "dim.fishing/2", 
+                    "type": "float", 
+                    "name": "r"
+                }, 
+                {
+                    "type": "shape output", 
+                    "name": "shape"
+                }, 
+                {
+                    "expr": [
+                        "import fab", 
+                        "", 
+                        "title('Cylinder')", 
+                        "", 
+                        "input('x', float)", 
+                        "input('y', float)", 
+                        "input('z0', float)", 
+                        "input('z1', float)", 
+                        "input('r', float)", 
+                        "", 
+                        "output('shape', fab.shapes.cylinder(x, y, z0, z1, r))", 
+                        "", 
+                        "# UI", 
+                        "fab.ui.wireframe([(x, y, z0), (x, y, z1)])", 
+                        "fab.ui.wireframe([(x, y, z0), (x+r, y, z0)])", 
+                        "", 
+                        "fab.ui.wireframe([", 
+                        "    (math.cos(i/36. * 2*math.pi) * r + x,", 
+                        "     math.sin(i/36. * 2*math.pi) * r + y, z0)", 
+                        "    for i in range(36)], close=True)", 
+                        "", 
+                        "fab.ui.wireframe([", 
+                        "    (math.cos(i/36. * 2*math.pi) * r + x,", 
+                        "     math.sin(i/36. * 2*math.pi) * r + y, z1)", 
+                        "    for i in range(36)], close=True)", 
+                        "", 
+                        "fab.ui.point(x, y, z0)", 
+                        "fab.ui.point(x, y, z1)", 
+                        "fab.ui.point(x + r, y, z0, drag=(r, None, None))", 
+                        ""
+                    ], 
+                    "type": "script", 
+                    "name": "__script"
+                }
+            ]
+        }, 
+        {
+            "inspector": [
+                202.87009626657743, 
+                -169.29159757417813
+            ], 
+            "datums": [
+                {
+                    "expr": "rib_l_base", 
+                    "type": "name", 
+                    "name": "__name"
+                }, 
+                {
+                    "expr": "0.0", 
+                    "type": "float", 
+                    "name": "xmin"
+                }, 
+                {
+                    "expr": "0.0", 
+                    "type": "float", 
+                    "name": "ymin"
+                }, 
+                {
+                    "expr": "0.0", 
+                    "type": "float", 
+                    "name": "zmin"
+                }, 
+                {
+                    "expr": "6", 
+                    "type": "float", 
+                    "name": "xmax"
+                }, 
+                {
+                    "expr": "dim.piece_length", 
+                    "type": "float", 
+                    "name": "ymax"
+                }, 
+                {
+                    "expr": "dim.rib_l_z", 
+                    "type": "float", 
+                    "name": "zmax"
+                }, 
+                {
+                    "type": "shape output", 
+                    "name": "shape"
+                }, 
+                {
+                    "expr": [
+                        "import fab", 
+                        "", 
+                        "title('Cube')", 
+                        "", 
+                        "input('xmin', float)", 
+                        "input('ymin', float)", 
+                        "input('zmin', float)", 
+                        "input('xmax', float)", 
+                        "input('ymax', float)", 
+                        "input('zmax', float)", 
+                        "", 
+                        "output('shape', fab.shapes.cube(xmin, xmax, ymin, ymax, zmin, zmax))", 
+                        "", 
+                        "# UI", 
+                        "fab.ui.wireframe([(xmin, ymin, zmin), (xmax, ymin, zmin),", 
+                        "                  (xmax, ymax, zmin), (xmin, ymax, zmin)], close=True)", 
+                        "fab.ui.wireframe([(xmin, ymin, zmax), (xmax, ymin, zmax),", 
+                        "                  (xmax, ymax, zmax), (xmin, ymax, zmax)], close=True)", 
+                        "fab.ui.wireframe([(xmin, ymin, zmin), (xmin, ymax, zmin),", 
+                        "                  (xmin, ymax, zmax), (xmin, ymin, zmax)], close=True)", 
+                        "fab.ui.wireframe([(xmax, ymin, zmin), (xmax, ymax, zmin),", 
+                        "                  (xmax, ymax, zmax), (xmax, ymin, zmax)], close=True)", 
+                        "fab.ui.point(xmin, ymin, zmin)", 
+                        "fab.ui.point(xmax, ymax, zmax)", 
+                        ""
+                    ], 
+                    "type": "script", 
+                    "name": "__script"
+                }
+            ]
+        }, 
+        {
+            "inspector": [
+                503.8837516007022, 
+                -166.2871181350946
+            ], 
+            "datums": [
+                {
+                    "expr": "rib_m_base", 
+                    "type": "name", 
+                    "name": "__name"
+                }, 
+                {
+                    "expr": "dim.width/2-6/2", 
+                    "type": "float", 
+                    "name": "xmin"
+                }, 
+                {
+                    "expr": "0.0", 
+                    "type": "float", 
+                    "name": "ymin"
+                }, 
+                {
+                    "expr": "0.0", 
+                    "type": "float", 
+                    "name": "zmin"
+                }, 
+                {
+                    "expr": "dim.width/2+6/2", 
+                    "type": "float", 
+                    "name": "xmax"
+                }, 
+                {
+                    "expr": "dim.piece_length", 
+                    "type": "float", 
+                    "name": "ymax"
+                }, 
+                {
+                    "expr": "dim.rib_m_z", 
+                    "type": "float", 
+                    "name": "zmax"
+                }, 
+                {
+                    "type": "shape output", 
+                    "name": "shape"
+                }, 
+                {
+                    "expr": [
+                        "import fab", 
+                        "", 
+                        "title('Cube')", 
+                        "", 
+                        "input('xmin', float)", 
+                        "input('ymin', float)", 
+                        "input('zmin', float)", 
+                        "input('xmax', float)", 
+                        "input('ymax', float)", 
+                        "input('zmax', float)", 
+                        "", 
+                        "output('shape', fab.shapes.cube(xmin, xmax, ymin, ymax, zmin, zmax))", 
+                        "", 
+                        "# UI", 
+                        "fab.ui.wireframe([(xmin, ymin, zmin), (xmax, ymin, zmin),", 
+                        "                  (xmax, ymax, zmin), (xmin, ymax, zmin)], close=True)", 
+                        "fab.ui.wireframe([(xmin, ymin, zmax), (xmax, ymin, zmax),", 
+                        "                  (xmax, ymax, zmax), (xmin, ymax, zmax)], close=True)", 
+                        "fab.ui.wireframe([(xmin, ymin, zmin), (xmin, ymax, zmin),", 
+                        "                  (xmin, ymax, zmax), (xmin, ymin, zmax)], close=True)", 
+                        "fab.ui.wireframe([(xmax, ymin, zmin), (xmax, ymax, zmin),", 
+                        "                  (xmax, ymax, zmax), (xmax, ymin, zmax)], close=True)", 
+                        "fab.ui.point(xmin, ymin, zmin)", 
+                        "fab.ui.point(xmax, ymax, zmax)", 
+                        ""
+                    ], 
+                    "type": "script", 
+                    "name": "__script"
+                }
+            ]
+        }, 
+        {
+            "inspector": [
+                811.8929274957435, 
+                -164.68174280819434
+            ], 
+            "datums": [
+                {
+                    "expr": "rib_r_base", 
+                    "type": "name", 
+                    "name": "__name"
+                }, 
+                {
+                    "expr": "dim.width-6", 
+                    "type": "float", 
+                    "name": "xmin"
+                }, 
+                {
+                    "expr": "0.0", 
+                    "type": "float", 
+                    "name": "ymin"
+                }, 
+                {
+                    "expr": "0.0", 
+                    "type": "float", 
+                    "name": "zmin"
+                }, 
+                {
+                    "expr": "dim.width", 
+                    "type": "float", 
+                    "name": "xmax"
+                }, 
+                {
+                    "expr": "dim.piece_length", 
+                    "type": "float", 
+                    "name": "ymax"
+                }, 
+                {
+                    "expr": "dim.rib_r_z", 
+                    "type": "float", 
+                    "name": "zmax"
+                }, 
+                {
+                    "type": "shape output", 
+                    "name": "shape"
+                }, 
+                {
+                    "expr": [
+                        "import fab", 
+                        "", 
+                        "title('Cube')", 
+                        "", 
+                        "input('xmin', float)", 
+                        "input('ymin', float)", 
+                        "input('zmin', float)", 
+                        "input('xmax', float)", 
+                        "input('ymax', float)", 
+                        "input('zmax', float)", 
+                        "", 
+                        "output('shape', fab.shapes.cube(xmin, xmax, ymin, ymax, zmin, zmax))", 
+                        "", 
+                        "# UI", 
+                        "fab.ui.wireframe([(xmin, ymin, zmin), (xmax, ymin, zmin),", 
+                        "                  (xmax, ymax, zmin), (xmin, ymax, zmin)], close=True)", 
+                        "fab.ui.wireframe([(xmin, ymin, zmax), (xmax, ymin, zmax),", 
+                        "                  (xmax, ymax, zmax), (xmin, ymax, zmax)], close=True)", 
+                        "fab.ui.wireframe([(xmin, ymin, zmin), (xmin, ymax, zmin),", 
+                        "                  (xmin, ymax, zmax), (xmin, ymin, zmax)], close=True)", 
+                        "fab.ui.wireframe([(xmax, ymin, zmin), (xmax, ymax, zmin),", 
+                        "                  (xmax, ymax, zmax), (xmax, ymin, zmax)], close=True)", 
+                        "fab.ui.point(xmin, ymin, zmin)", 
+                        "fab.ui.point(xmax, ymax, zmax)", 
+                        ""
+                    ], 
+                    "type": "script", 
+                    "name": "__script"
+                }
+            ]
+        }
+    ], 
+    "protocol": 5
+}
